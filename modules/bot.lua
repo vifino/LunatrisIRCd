@@ -5,7 +5,7 @@ hook.new("command_privmsg",function(cl,chan,txt)
 	  --Do nothing
 	else
   	if txt:lower() == "god" then
-  	  sendtoChannel("god",chan,godreplies[ math.random( #myTable ) ])
+  	  sendtoChannel("god",chan,godreplies[ math.random( #godreplies ) ])
   	end
 	end
 end)
