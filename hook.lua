@@ -55,7 +55,7 @@ function hook.remsocket(sk)
 	end
 end
 function hook.newrsocket(sk)
-	sk:settimeout(timeout)
+	sk:settimeout(rtimeout)
 	table.insert(hook.rsel,sk)
 end
 function hook.remrsocket(sk)
