@@ -7,3 +7,6 @@ function findCL(nick)
 		end
 	end
 end
+function sendtoChannel(nick,channel,text)
+	sendchan(channel,":"..nick.." PRIVMSG "..channel.." :"..text)
+end
