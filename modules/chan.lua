@@ -110,7 +110,7 @@ hook.new("command_quit",function(cl,reason)
 		cl:close("Client quit")
 	end
 	for k,chan in pairs(cl.chans) do
-		table.vremove(cl.chans,v)
-		table.vremove(chans[v],cl)
+		table.vremove(cl.chans,chan)
+		table.vremove(chans[chan],cl)
 	end
 end)
