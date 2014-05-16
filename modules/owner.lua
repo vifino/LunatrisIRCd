@@ -4,5 +4,6 @@ hooks.new("command_kill",function(cl,nick)
 			if v.nick == nick then
 				v:close("Client quit (Murdered by the almighty.)")
 			end
+		end
 	end
 end)
