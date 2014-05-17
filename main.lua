@@ -1,4 +1,5 @@
-local socket=require("socket")
+socket=require("socket")
+root = arg[0]:gsub("main.lua","")
 function tpairs(tbl)
 	local s={}
 	local c=1
@@ -12,12 +13,12 @@ function tpairs(tbl)
 		return s[c],tbl[s[c]]
 	end
 end
-dofile("settings.lua")
-dofile("hook.lua")
-dofile("system.lua")
-dofile("libUtil.lua")
-libUtil.loadDir("libs")
-libUtil.loadDir("modules")
+dofile(root.."settings.lua")
+dofile(root.."hook.lua")
+dofile(root.."system.lua")
+dofile(root.."libUtil.lua")
+libUtil.loadDir(root.."libs")
+libUtil.loadDir(root.."modules")
 local sv=assert(socket.bind("*",port))
 hook.newsocket(sv)
 clients={}
