@@ -105,7 +105,8 @@ hook.new("command_notice",function(cl,chan,txt)
 	end
 end)
 
-hook.new("command_quit",function(cl,reason)
+hook.new("command_quit",function(cl,...)
+	local reason = table.concat(...," ")
 	if reason then
 		cl:close("Client quit ("..reason..")")
 	else
