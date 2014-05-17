@@ -4,7 +4,7 @@ hook.new("command_whois",function(cl,user)
 	end
 	if nicks[user] then
 		local user=nicks[user]
-		cl:send(encode(cl,311,user.nick,user.username,user.ip,"*",":"..user.realname))
+		cl:send(encode(cl,311,user.nick,user.username or user.nick,user.ip,"*",":"..user.realname or user.nick))
 		local o={}
 		for k,v in pairs(user.chans) do
 			local chan=chans[v]
