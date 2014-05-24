@@ -107,8 +107,8 @@ end)
 
 hook.new("command_quit",function(cl,...)
 	local reason = table.concat({...}," ")
-	if reason then
-		cl:close("Client quit ("..reason..")")
+	if reason:match("^:") then
+		cl:close("Client quit ("..reason:sub(2)..")")
 	else
 		cl:close("Client quit")
 	end
